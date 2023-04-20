@@ -31,4 +31,4 @@ class PINN(nn.Module):
             inputs = self.activation(layer(inputs))
         C = self.output_layer(inputs)
         return C
-     
+      
