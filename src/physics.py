@@ -23,4 +23,4 @@ def compute_physics_loss(model, x_col, y_col, t_col, u_max, D, k):
     pde_residual = dC_dt + (u_vel * dC_dx) - D * (d2C_dx2 + d2C_dy2) + (k * C)
     
     return torch.mean(pde_residual ** 2)
-    
+     
