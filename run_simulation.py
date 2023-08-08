@@ -61,3 +61,4 @@ if __name__ == "__main__":
                          save_path="results/diseased_kidney_2D.png")
                          
     print("\n[+] Simulations complete. Output saved to 'results/' directory.")
+
