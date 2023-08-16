@@ -67,4 +67,4 @@ def train_pinn(epochs=6000, lr=1e-3, u_max=1.0, D=0.01, k=1.0):
             print(f"Epoch {epoch:05d} | Total: {total_loss.item():.4f} | Data: {data_loss.item():.4f} | Physics: {physics_loss.item():.4f}")
             
     return model
-     
+      
