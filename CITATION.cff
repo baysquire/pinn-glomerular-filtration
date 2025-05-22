@@ -2,15 +2,28 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "2D Physics-Informed Neural Network for Glomerular Filtration"
+version: "1.1.0"
+date-released: "2025-05-18"
+license: MIT
+repository-code: "https://github.com/baysquire/pinn-glomerular-filtration"
+url: "https://github.com/baysquire/pinn-glomerular-filtration"
+abstract: >
+  A 2D Physics-Informed Neural Network (PINN) for simulating solute transport
+  in a simplified glomerular capillary under normotensive and hypertensive
+  conditions. Embeds a Poiseuille-convection-diffusion-reaction PDE into the
+  network loss function. Validated against the analytical solution of the
+  1D steady-state convection-diffusion equation (L2 error: 2.64e-4).
 authors:
   - family-names: "Sojobi"
     given-names: "Abiodun"
-repository-code: "https://github.com/baysquire/pinn-glomerular-filtration"
-license: MIT
+    email: "asojobi@unilag.edu.ng"
+    affiliation: "University of Lagos, Nigeria"
 keywords:
   - physics-informed neural networks
   - glomerular filtration
   - kidney disease
   - computational nephrology
-  - Navier-Stokes
-  - convection-diffusion
+  - convection-diffusion-reaction
+  - Poiseuille flow
+  - chronic kidney disease
+  - PyTorch

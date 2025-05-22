@@ -87,6 +87,28 @@ The concentration gradient demonstrates effective solute clearance — toxins en
 ### Hypertensive State
 Under elevated hydrostatic pressure and impaired filtration ($k=0.1$), the axial convection dominates over transverse diffusion, resulting in significant solute retention at the outlet ($x=1$). This models the clinical phenomenon of hyperfiltration injury.
 
+### Validation Against Analytical Solution
+
+To confirm the PINN learns the correct physics, we compare against the closed-form solution of the 1D steady-state convection–diffusion equation at Péclet number Pe = 5:
+
+$$C(x) = \frac{\exp(\text{Pe} \cdot x) - 1}{\exp(\text{Pe}) - 1}$$
+
+A dedicated 1D PINN trained for 15\,000 epochs achieves:
+
+| Metric | Value |
+|--------|-------|
+| **L₂ relative error** | **2.64 × 10⁻⁴ (0.026%)** |
+| Max absolute error | 1.33 × 10⁻⁴ |
+
+Run the validation yourself:
+```bash
+python run_validation.py
+```
+
+### Parameter Sensitivity
+
+The `run_sensitivity.py` script sweeps over $u_{\max} \in \{0.5, 1.0, 2.0, 3.5\}$ and $k \in \{0.1, 0.5, 1.0, 1.5, 2.0\}$, producing a heatmap of outlet solute retention. A sharp diagonal transition band separates effective from impaired filtration regimes.
+
 ## Requirements and Usage
 
 Dependencies:
@@ -106,18 +128,35 @@ An interactive walkthrough is also available:
 jupyter notebook Walkthrough.ipynb
 ```
 
+To run the parameter sensitivity sweep:
+```bash
+python run_sensitivity.py
+```
+
+To validate against the analytical solution (reports L₂ error):
+```bash
+python run_validation.py
+```
+
 ## License
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+
+## Preprint
+
+A companion manuscript describing the model, experiments, and results is available as a preprint:
+
+> Sojobi, A. (2025). *Modeling Glomerular Solute Transport Under Hypertensive Conditions Using a 2D Physics-Informed Neural Network.* University of Lagos. Available at: https://github.com/baysquire/pinn-glomerular-filtration
 
 ## Citation
 
 If you use this work, please cite:
 ```bibtex
-@software{sojobi2026pinn,
-  author = {Sojobi, Abiodun},
-  title = {2D Physics-Informed Neural Network for Glomerular Filtration},
-  year = {2026},
-  url = {https://github.com/baysquire/pinn-glomerular-filtration}
+@software{sojobi2025pinn,
+  author    = {Sojobi, Abiodun},
+  title     = {2D Physics-Informed Neural Network for Glomerular Filtration},
+  year      = {2025},
+  publisher = {GitHub},
+  url       = {https://github.com/baysquire/pinn-glomerular-filtration}
 }
 ```
