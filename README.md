@@ -1,6 +1,6 @@
 # 2D Physics-Informed Neural Network for Glomerular Filtration
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19892890.svg)](https://doi.org/10.5281/zenodo.19892890)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.19921854-blue.svg)](https://doi.org/10.5281/zenodo.19921854)
 
 This repository provides a PyTorch implementation of a 2D Physics-Informed Neural Network (PINN) used to model fluid dynamics and solute transport within a simplified glomerular capillary. 
 
@@ -86,8 +86,12 @@ The `run_simulation.py` script executes two comparative states:
 ### Normotensive State
 The concentration gradient demonstrates effective solute clearance — toxins entering at the inlet ($x=0$) are progressively filtered and removed at the capillary walls.
 
+![Healthy Kidney Simulation](results/healthy_kidney_2D.png)
+
 ### Hypertensive State
 Under elevated hydrostatic pressure and impaired filtration ($k=0.1$), the axial convection dominates over transverse diffusion, resulting in significant solute retention at the outlet ($x=1$). This models the clinical phenomenon of hyperfiltration injury.
+
+![Diseased Kidney Simulation](results/diseased_kidney_2D.png)
 
 ### Validation Against Analytical Solution
 
@@ -102,7 +106,10 @@ A dedicated 1D PINN trained for 15\,000 epochs achieves:
 | **L₂ relative error** | **2.64 × 10⁻⁴ (0.026%)** |
 | Max absolute error | 1.33 × 10⁻⁴ |
 
-Run the validation yourself:
+![Validation vs Analytical](results/validation_vs_analytical.png)
+
+
+To reproduce the validation metrics:
 ```bash
 python run_validation.py
 ```
@@ -148,7 +155,7 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 A companion manuscript describing the model, experiments, and results is available as a preprint:
 
-> Sojobi, A. (2025). *Modeling Glomerular Solute Transport Under Hypertensive Conditions Using a 2D Physics-Informed Neural Network.* University of Lagos. https://doi.org/10.5281/zenodo.19892890
+> Sojobi, A. (2025). *Modeling Glomerular Solute Transport Under Hypertensive Conditions Using a 2D Physics-Informed Neural Network.* University of Lagos. https://doi.org/10.5281/zenodo.19921854
 
 ## Citation
 
@@ -159,7 +166,7 @@ If you use this work, please cite:
   title     = {2D Physics-Informed Neural Network for Glomerular Filtration},
   year      = {2025},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.19892890},
-  url       = {https://doi.org/10.5281/zenodo.19892890}
+  doi       = {10.5281/zenodo.19921854},
+  url       = {https://doi.org/10.5281/zenodo.19921854}
 }
 ```
