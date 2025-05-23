@@ -1,5 +1,7 @@
 # 2D Physics-Informed Neural Network for Glomerular Filtration
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19892890.svg)](https://doi.org/10.5281/zenodo.19892890)
+
 This repository provides a PyTorch implementation of a 2D Physics-Informed Neural Network (PINN) used to model fluid dynamics and solute transport within a simplified glomerular capillary. 
 
 The model couples the steady-state Poiseuille flow equations with a transient Convection-Diffusion-Reaction (CDR) PDE to simulate the clearance of metabolic solutes (e.g., creatinine) across a semi-permeable membrane, governed by varying hydrostatic pressures and filtration coefficients.
@@ -146,7 +148,7 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 A companion manuscript describing the model, experiments, and results is available as a preprint:
 
-> Sojobi, A. (2025). *Modeling Glomerular Solute Transport Under Hypertensive Conditions Using a 2D Physics-Informed Neural Network.* University of Lagos. Available at: https://github.com/baysquire/pinn-glomerular-filtration
+> Sojobi, A. (2025). *Modeling Glomerular Solute Transport Under Hypertensive Conditions Using a 2D Physics-Informed Neural Network.* University of Lagos. https://doi.org/10.5281/zenodo.19892890
 
 ## Citation
 
@@ -156,7 +158,8 @@ If you use this work, please cite:
   author    = {Sojobi, Abiodun},
   title     = {2D Physics-Informed Neural Network for Glomerular Filtration},
   year      = {2025},
-  publisher = {GitHub},
-  url       = {https://github.com/baysquire/pinn-glomerular-filtration}
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19892890},
+  url       = {https://doi.org/10.5281/zenodo.19892890}
 }
 ```
